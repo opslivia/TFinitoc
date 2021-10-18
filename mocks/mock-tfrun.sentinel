@@ -1,0 +1,53 @@
+id = "run-iAQxf6THnnpkN42R"
+created_at = "2021-10-16T17:30:29.829Z"
+message = "Add files via upload"
+commit_sha = "2a5367f7a67556f23dcb2aad9fca308b7ac4e7cb"
+speculative = false
+is_destroy = false
+refresh = true
+refresh_only = false
+replace_addrs = null
+target_addrs = null
+
+variables = {
+	"ARM_CLIENT_ID": {
+		"category":  "env",
+		"sensitive": true,
+	},
+	"ARM_CLIENT_SECRET": {
+		"category":  "env",
+		"sensitive": true,
+	},
+	"ARM_SUBSCRIPTION_ID": {
+		"category":  "env",
+		"sensitive": true,
+	},
+	"ARM_TENANT_ID": {
+		"category":  "env",
+		"sensitive": true,
+	},
+	"prefix": {
+		"category":  "terraform",
+		"sensitive": false,
+	},
+}
+
+organization = {
+	"name": "AZproviders",
+}
+
+workspace = {
+	"auto_apply":  false,
+	"created_at":  "2021-10-15T18:15:58.431Z",
+	"description": "learning TF",
+	"id":          "ws-MUZxpJEoUbV3ZAZR",
+	"name":        "TFinitoc",
+	"tags":        [],
+	"vcs_repo": {
+		"branch":             "",
+		"display_identifier": "opslivia/TFinitoc",
+		"identifier":         "opslivia/TFinitoc",
+		"ingress_submodules": false,
+	},
+	"working_directory": "",
+}

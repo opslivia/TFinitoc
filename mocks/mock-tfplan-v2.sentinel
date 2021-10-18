@@ -1,0 +1,1142 @@
+terraform_version = "1.0.9"
+
+planned_values = {
+	"outputs": {},
+	"resources": {
+		"azurerm_network_interface.main": {
+			"address":        "azurerm_network_interface.main",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "main",
+			"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+			"tainted":        false,
+			"type":           "azurerm_network_interface",
+			"values": {
+				"enable_accelerated_networking": false,
+				"enable_ip_forwarding":          false,
+				"ip_configuration": [
+					{
+						"name": "testconfiguration1",
+						"private_ip_address_allocation": "dynamic",
+						"private_ip_address_version":    "IPv4",
+						"public_ip_address_id":          null,
+					},
+				],
+				"location":            "westus2",
+				"name":                "initoc-nic",
+				"resource_group_name": "initoc-rg",
+				"tags":                null,
+				"timeouts":            null,
+			},
+		},
+		"azurerm_resource_group.main": {
+			"address":        "azurerm_resource_group.main",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "main",
+			"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+			"tainted":        false,
+			"type":           "azurerm_resource_group",
+			"values": {
+				"location": "westus2",
+				"name":     "initoc-rg",
+				"tags":     null,
+				"timeouts": null,
+			},
+		},
+		"azurerm_subnet.internal": {
+			"address":        "azurerm_subnet.internal",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "internal",
+			"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+			"tainted":        false,
+			"type":           "azurerm_subnet",
+			"values": {
+				"address_prefixes": [
+					"10.0.2.0/24",
+				],
+				"delegation": [],
+				"enforce_private_link_endpoint_network_policies": false,
+				"enforce_private_link_service_network_policies":  false,
+				"name":                        "internal",
+				"resource_group_name":         "initoc-rg",
+				"service_endpoint_policy_ids": null,
+				"service_endpoints":           null,
+				"timeouts":                    null,
+				"virtual_network_name":        "initoc-network",
+			},
+		},
+		"azurerm_virtual_machine.main": {
+			"address":        "azurerm_virtual_machine.main",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "main",
+			"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+			"tainted":        false,
+			"type":           "azurerm_virtual_machine",
+			"values": {
+				"additional_capabilities":          [],
+				"boot_diagnostics":                 [],
+				"delete_data_disks_on_termination": true,
+				"delete_os_disk_on_termination":    true,
+				"location":                         "westus2",
+				"name":                             "initoc-vm",
+				"os_profile":                       "REDACTED_SENSITIVE",
+				"os_profile_linux_config": [
+					{
+						"disable_password_authentication": false,
+						"ssh_keys":                        [],
+					},
+				],
+				"os_profile_secrets":        [],
+				"os_profile_windows_config": [],
+				"plan": [],
+				"primary_network_interface_id": null,
+				"proximity_placement_group_id": null,
+				"resource_group_name":          "initoc-rg",
+				"storage_image_reference": [
+					{
+						"id":        "",
+						"offer":     "UbuntuServer",
+						"publisher": "Canonical",
+						"sku":       "16.04-LTS",
+						"version":   "latest",
+					},
+				],
+				"storage_os_disk": [
+					{
+						"caching":                   "ReadWrite",
+						"create_option":             "FromImage",
+						"image_uri":                 null,
+						"managed_disk_type":         "Standard_LRS",
+						"name":                      "myosdisk1",
+						"vhd_uri":                   null,
+						"write_accelerator_enabled": false,
+					},
+				],
+				"tags":     null,
+				"timeouts": null,
+				"vm_size":  "Standard_DS1_v2",
+				"zones":    null,
+			},
+		},
+		"azurerm_virtual_network.main": {
+			"address":        "azurerm_virtual_network.main",
+			"depends_on":     [],
+			"deposed_key":    "",
+			"index":          null,
+			"mode":           "managed",
+			"module_address": "",
+			"name":           "main",
+			"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+			"tainted":        false,
+			"type":           "azurerm_virtual_network",
+			"values": {
+				"address_space": [
+					"10.0.0.0/16",
+				],
+				"bgp_community":         null,
+				"ddos_protection_plan":  [],
+				"location":              "westus2",
+				"name":                  "initoc-network",
+				"resource_group_name":   "initoc-rg",
+				"tags":                  null,
+				"timeouts":              null,
+				"vm_protection_enabled": false,
+			},
+		},
+	},
+}
+
+variables = {
+	"prefix": {
+		"name":  "prefix",
+		"value": "initoc",
+	},
+}
+
+resource_changes = {
+	"azurerm_network_interface.main": {
+		"address": "azurerm_network_interface.main",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"enable_accelerated_networking": false,
+				"enable_ip_forwarding":          false,
+				"ip_configuration": [
+					{
+						"name": "testconfiguration1",
+						"private_ip_address_allocation": "dynamic",
+						"private_ip_address_version":    "IPv4",
+						"public_ip_address_id":          null,
+					},
+				],
+				"location":            "westus2",
+				"name":                "initoc-nic",
+				"resource_group_name": "initoc-rg",
+				"tags":                null,
+				"timeouts":            null,
+			},
+			"after_unknown": {
+				"applied_dns_servers": true,
+				"dns_servers":         true,
+				"id":                  true,
+				"internal_dns_name_label":     true,
+				"internal_domain_name_suffix": true,
+				"ip_configuration": [
+					{
+						"primary":            true,
+						"private_ip_address": true,
+						"subnet_id":          true,
+					},
+				],
+				"mac_address":          true,
+				"private_ip_address":   true,
+				"private_ip_addresses": true,
+				"virtual_machine_id":   true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "main",
+		"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+		"type":           "azurerm_network_interface",
+	},
+	"azurerm_resource_group.main": {
+		"address": "azurerm_resource_group.main",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"location": "westus2",
+				"name":     "initoc-rg",
+				"tags":     null,
+				"timeouts": null,
+			},
+			"after_unknown": {
+				"id": true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "main",
+		"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+		"type":           "azurerm_resource_group",
+	},
+	"azurerm_subnet.internal": {
+		"address": "azurerm_subnet.internal",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"address_prefixes": [
+					"10.0.2.0/24",
+				],
+				"delegation": [],
+				"enforce_private_link_endpoint_network_policies": false,
+				"enforce_private_link_service_network_policies":  false,
+				"name":                        "internal",
+				"resource_group_name":         "initoc-rg",
+				"service_endpoint_policy_ids": null,
+				"service_endpoints":           null,
+				"timeouts":                    null,
+				"virtual_network_name":        "initoc-network",
+			},
+			"after_unknown": {
+				"address_prefix": true,
+				"address_prefixes": [
+					false,
+				],
+				"delegation": [],
+				"id":         true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "internal",
+		"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+		"type":           "azurerm_subnet",
+	},
+	"azurerm_virtual_machine.main": {
+		"address": "azurerm_virtual_machine.main",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"additional_capabilities":          [],
+				"boot_diagnostics":                 [],
+				"delete_data_disks_on_termination": true,
+				"delete_os_disk_on_termination":    true,
+				"location":                         "westus2",
+				"name":                             "initoc-vm",
+				"os_profile":                       "REDACTED_SENSITIVE",
+				"os_profile_linux_config": [
+					{
+						"disable_password_authentication": false,
+						"ssh_keys":                        [],
+					},
+				],
+				"os_profile_secrets":        [],
+				"os_profile_windows_config": [],
+				"plan": [],
+				"primary_network_interface_id": null,
+				"proximity_placement_group_id": null,
+				"resource_group_name":          "initoc-rg",
+				"storage_image_reference": [
+					{
+						"id":        "",
+						"offer":     "UbuntuServer",
+						"publisher": "Canonical",
+						"sku":       "16.04-LTS",
+						"version":   "latest",
+					},
+				],
+				"storage_os_disk": [
+					{
+						"caching":                   "ReadWrite",
+						"create_option":             "FromImage",
+						"image_uri":                 null,
+						"managed_disk_type":         "Standard_LRS",
+						"name":                      "myosdisk1",
+						"vhd_uri":                   null,
+						"write_accelerator_enabled": false,
+					},
+				],
+				"tags":     null,
+				"timeouts": null,
+				"vm_size":  "Standard_DS1_v2",
+				"zones":    null,
+			},
+			"after_unknown": {
+				"additional_capabilities": [],
+				"availability_set_id":     true,
+				"boot_diagnostics":        [],
+				"id":                      true,
+				"identity":                true,
+				"license_type":            true,
+				"network_interface_ids":   true,
+				"os_profile": [
+					{
+						"custom_data": true,
+					},
+				],
+				"os_profile_linux_config": [
+					{
+						"ssh_keys": [],
+					},
+				],
+				"os_profile_secrets":        [],
+				"os_profile_windows_config": [],
+				"plan":              [],
+				"storage_data_disk": true,
+				"storage_image_reference": [
+					{},
+				],
+				"storage_os_disk": [
+					{
+						"disk_size_gb":    true,
+						"managed_disk_id": true,
+						"os_type":         true,
+					},
+				],
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "main",
+		"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+		"type":           "azurerm_virtual_machine",
+	},
+	"azurerm_virtual_network.main": {
+		"address": "azurerm_virtual_network.main",
+		"change": {
+			"actions": [
+				"create",
+			],
+			"after": {
+				"address_space": [
+					"10.0.0.0/16",
+				],
+				"bgp_community":         null,
+				"ddos_protection_plan":  [],
+				"location":              "westus2",
+				"name":                  "initoc-network",
+				"resource_group_name":   "initoc-rg",
+				"tags":                  null,
+				"timeouts":              null,
+				"vm_protection_enabled": false,
+			},
+			"after_unknown": {
+				"address_space": [
+					false,
+				],
+				"ddos_protection_plan": [],
+				"dns_servers":          true,
+				"guid":                 true,
+				"id":                   true,
+				"subnet":               true,
+			},
+			"before": null,
+		},
+		"deposed":        "",
+		"index":          null,
+		"mode":           "managed",
+		"module_address": "",
+		"name":           "main",
+		"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+		"type":           "azurerm_virtual_network",
+	},
+}
+
+output_changes = {}
+
+raw = {
+	"configuration": {
+		"provider_config": {
+			"azurerm": {
+				"expressions": {
+					"features": [
+						{},
+					],
+				},
+				"name":               "azurerm",
+				"version_constraint": "~> 2.65",
+			},
+		},
+		"root_module": {
+			"resources": [
+				{
+					"address": "azurerm_network_interface.main",
+					"expressions": {
+						"ip_configuration": [
+							{
+								"name": {
+									"constant_value": "testconfiguration1",
+								},
+								"private_ip_address_allocation": {
+									"constant_value": "Dynamic",
+								},
+								"subnet_id": {
+									"references": [
+										"azurerm_subnet.internal.id",
+										"azurerm_subnet.internal",
+									],
+								},
+							},
+						],
+						"location": {
+							"references": [
+								"azurerm_resource_group.main.location",
+								"azurerm_resource_group.main",
+							],
+						},
+						"name": {
+							"references": [
+								"var.prefix",
+							],
+						},
+						"resource_group_name": {
+							"references": [
+								"azurerm_resource_group.main.name",
+								"azurerm_resource_group.main",
+							],
+						},
+					},
+					"mode":                "managed",
+					"name":                "main",
+					"provider_config_key": "azurerm",
+					"schema_version":      0,
+					"type":                "azurerm_network_interface",
+				},
+				{
+					"address": "azurerm_resource_group.main",
+					"expressions": {
+						"location": {
+							"constant_value": "westus2",
+						},
+						"name": {
+							"references": [
+								"var.prefix",
+							],
+						},
+					},
+					"mode":                "managed",
+					"name":                "main",
+					"provider_config_key": "azurerm",
+					"schema_version":      0,
+					"type":                "azurerm_resource_group",
+				},
+				{
+					"address": "azurerm_subnet.internal",
+					"expressions": {
+						"address_prefixes": {
+							"constant_value": [
+								"10.0.2.0/24",
+							],
+						},
+						"name": {
+							"constant_value": "internal",
+						},
+						"resource_group_name": {
+							"references": [
+								"azurerm_resource_group.main.name",
+								"azurerm_resource_group.main",
+							],
+						},
+						"virtual_network_name": {
+							"references": [
+								"azurerm_virtual_network.main.name",
+								"azurerm_virtual_network.main",
+							],
+						},
+					},
+					"mode":                "managed",
+					"name":                "internal",
+					"provider_config_key": "azurerm",
+					"schema_version":      0,
+					"type":                "azurerm_subnet",
+				},
+				{
+					"address": "azurerm_virtual_machine.main",
+					"expressions": {
+						"delete_data_disks_on_termination": {
+							"constant_value": true,
+						},
+						"delete_os_disk_on_termination": {
+							"constant_value": true,
+						},
+						"location": {
+							"references": [
+								"azurerm_resource_group.main.location",
+								"azurerm_resource_group.main",
+							],
+						},
+						"name": {
+							"references": [
+								"var.prefix",
+							],
+						},
+						"network_interface_ids": {
+							"references": [
+								"azurerm_network_interface.main.id",
+								"azurerm_network_interface.main",
+							],
+						},
+						"os_profile": [
+							{
+								"admin_password": {
+									"constant_value": "0c@dm!n",
+								},
+								"admin_username": {
+									"constant_value": "ocadmin",
+								},
+								"computer_name": {
+									"constant_value": "hostname",
+								},
+							},
+						],
+						"os_profile_linux_config": [
+							{
+								"disable_password_authentication": {
+									"constant_value": false,
+								},
+							},
+						],
+						"resource_group_name": {
+							"references": [
+								"azurerm_resource_group.main.name",
+								"azurerm_resource_group.main",
+							],
+						},
+						"storage_image_reference": [
+							{
+								"offer": {
+									"constant_value": "UbuntuServer",
+								},
+								"publisher": {
+									"constant_value": "Canonical",
+								},
+								"sku": {
+									"constant_value": "16.04-LTS",
+								},
+								"version": {
+									"constant_value": "latest",
+								},
+							},
+						],
+						"storage_os_disk": [
+							{
+								"caching": {
+									"constant_value": "ReadWrite",
+								},
+								"create_option": {
+									"constant_value": "FromImage",
+								},
+								"managed_disk_type": {
+									"constant_value": "Standard_LRS",
+								},
+								"name": {
+									"constant_value": "myosdisk1",
+								},
+							},
+						],
+						"vm_size": {
+							"constant_value": "Standard_DS1_v2",
+						},
+					},
+					"mode":                "managed",
+					"name":                "main",
+					"provider_config_key": "azurerm",
+					"schema_version":      0,
+					"type":                "azurerm_virtual_machine",
+				},
+				{
+					"address": "azurerm_virtual_network.main",
+					"expressions": {
+						"address_space": {
+							"constant_value": [
+								"10.0.0.0/16",
+							],
+						},
+						"location": {
+							"references": [
+								"azurerm_resource_group.main.location",
+								"azurerm_resource_group.main",
+							],
+						},
+						"name": {
+							"references": [
+								"var.prefix",
+							],
+						},
+						"resource_group_name": {
+							"references": [
+								"azurerm_resource_group.main.name",
+								"azurerm_resource_group.main",
+							],
+						},
+					},
+					"mode":                "managed",
+					"name":                "main",
+					"provider_config_key": "azurerm",
+					"schema_version":      0,
+					"type":                "azurerm_virtual_network",
+				},
+			],
+			"variables": {
+				"prefix": {
+					"default": "initoc",
+				},
+			},
+		},
+	},
+	"format_version": "0.2",
+	"planned_values": {
+		"root_module": {
+			"resources": [
+				{
+					"address":        "azurerm_network_interface.main",
+					"mode":           "managed",
+					"name":           "main",
+					"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+					"schema_version": 0,
+					"sensitive_values": {
+						"applied_dns_servers": [],
+						"dns_servers":         [],
+						"ip_configuration": [
+							{},
+						],
+						"private_ip_addresses": [],
+					},
+					"type": "azurerm_network_interface",
+					"values": {
+						"enable_accelerated_networking": false,
+						"enable_ip_forwarding":          false,
+						"ip_configuration": [
+							{
+								"name": "testconfiguration1",
+								"private_ip_address_allocation": "dynamic",
+								"private_ip_address_version":    "IPv4",
+								"public_ip_address_id":          null,
+							},
+						],
+						"location":            "westus2",
+						"name":                "initoc-nic",
+						"resource_group_name": "initoc-rg",
+						"tags":                null,
+						"timeouts":            null,
+					},
+				},
+				{
+					"address":          "azurerm_resource_group.main",
+					"mode":             "managed",
+					"name":             "main",
+					"provider_name":    "registry.terraform.io/hashicorp/azurerm",
+					"schema_version":   0,
+					"sensitive_values": {},
+					"type":             "azurerm_resource_group",
+					"values": {
+						"location": "westus2",
+						"name":     "initoc-rg",
+						"tags":     null,
+						"timeouts": null,
+					},
+				},
+				{
+					"address":        "azurerm_subnet.internal",
+					"mode":           "managed",
+					"name":           "internal",
+					"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+					"schema_version": 0,
+					"sensitive_values": {
+						"address_prefixes": [
+							false,
+						],
+						"delegation": [],
+					},
+					"type": "azurerm_subnet",
+					"values": {
+						"address_prefixes": [
+							"10.0.2.0/24",
+						],
+						"delegation": [],
+						"enforce_private_link_endpoint_network_policies": false,
+						"enforce_private_link_service_network_policies":  false,
+						"name":                        "internal",
+						"resource_group_name":         "initoc-rg",
+						"service_endpoint_policy_ids": null,
+						"service_endpoints":           null,
+						"timeouts":                    null,
+						"virtual_network_name":        "initoc-network",
+					},
+				},
+				{
+					"address":        "azurerm_virtual_machine.main",
+					"mode":           "managed",
+					"name":           "main",
+					"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+					"schema_version": 0,
+					"sensitive_values": {
+						"additional_capabilities": [],
+						"boot_diagnostics":        [],
+						"identity":                [],
+						"network_interface_ids":   [],
+						"os_profile": [
+							{},
+						],
+						"os_profile_linux_config": [
+							{
+								"ssh_keys": [],
+							},
+						],
+						"os_profile_secrets":        [],
+						"os_profile_windows_config": [],
+						"plan":              [],
+						"storage_data_disk": [],
+						"storage_image_reference": [
+							{},
+						],
+						"storage_os_disk": [
+							{},
+						],
+					},
+					"type": "azurerm_virtual_machine",
+					"values": {
+						"additional_capabilities":          [],
+						"boot_diagnostics":                 [],
+						"delete_data_disks_on_termination": true,
+						"delete_os_disk_on_termination":    true,
+						"location":                         "westus2",
+						"name":                             "initoc-vm",
+						"os_profile":                       "REDACTED_SENSITIVE",
+						"os_profile_linux_config": [
+							{
+								"disable_password_authentication": false,
+								"ssh_keys":                        [],
+							},
+						],
+						"os_profile_secrets":        [],
+						"os_profile_windows_config": [],
+						"plan": [],
+						"primary_network_interface_id": null,
+						"proximity_placement_group_id": null,
+						"resource_group_name":          "initoc-rg",
+						"storage_image_reference": [
+							{
+								"id":        "",
+								"offer":     "UbuntuServer",
+								"publisher": "Canonical",
+								"sku":       "16.04-LTS",
+								"version":   "latest",
+							},
+						],
+						"storage_os_disk": [
+							{
+								"caching":                   "ReadWrite",
+								"create_option":             "FromImage",
+								"image_uri":                 null,
+								"managed_disk_type":         "Standard_LRS",
+								"name":                      "myosdisk1",
+								"vhd_uri":                   null,
+								"write_accelerator_enabled": false,
+							},
+						],
+						"tags":     null,
+						"timeouts": null,
+						"vm_size":  "Standard_DS1_v2",
+						"zones":    null,
+					},
+				},
+				{
+					"address":        "azurerm_virtual_network.main",
+					"mode":           "managed",
+					"name":           "main",
+					"provider_name":  "registry.terraform.io/hashicorp/azurerm",
+					"schema_version": 0,
+					"sensitive_values": {
+						"address_space": [
+							false,
+						],
+						"ddos_protection_plan": [],
+						"dns_servers":          [],
+						"subnet":               [],
+					},
+					"type": "azurerm_virtual_network",
+					"values": {
+						"address_space": [
+							"10.0.0.0/16",
+						],
+						"bgp_community":         null,
+						"ddos_protection_plan":  [],
+						"location":              "westus2",
+						"name":                  "initoc-network",
+						"resource_group_name":   "initoc-rg",
+						"tags":                  null,
+						"timeouts":              null,
+						"vm_protection_enabled": false,
+					},
+				},
+			],
+		},
+	},
+	"resource_changes": [
+		{
+			"address": "azurerm_network_interface.main",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"enable_accelerated_networking": false,
+					"enable_ip_forwarding":          false,
+					"ip_configuration": [
+						{
+							"name": "testconfiguration1",
+							"private_ip_address_allocation": "dynamic",
+							"private_ip_address_version":    "IPv4",
+							"public_ip_address_id":          null,
+						},
+					],
+					"location":            "westus2",
+					"name":                "initoc-nic",
+					"resource_group_name": "initoc-rg",
+					"tags":                null,
+					"timeouts":            null,
+				},
+				"after_sensitive": {
+					"applied_dns_servers": [],
+					"dns_servers":         [],
+					"ip_configuration": [
+						{},
+					],
+					"private_ip_addresses": [],
+				},
+				"after_unknown": {
+					"applied_dns_servers": true,
+					"dns_servers":         true,
+					"id":                  true,
+					"internal_dns_name_label":     true,
+					"internal_domain_name_suffix": true,
+					"ip_configuration": [
+						{
+							"primary":            true,
+							"private_ip_address": true,
+							"subnet_id":          true,
+						},
+					],
+					"mac_address":          true,
+					"private_ip_address":   true,
+					"private_ip_addresses": true,
+					"virtual_machine_id":   true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "main",
+			"provider_name": "registry.terraform.io/hashicorp/azurerm",
+			"type":          "azurerm_network_interface",
+		},
+		{
+			"address": "azurerm_resource_group.main",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"location": "westus2",
+					"name":     "initoc-rg",
+					"tags":     null,
+					"timeouts": null,
+				},
+				"after_sensitive": {},
+				"after_unknown": {
+					"id": true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "main",
+			"provider_name": "registry.terraform.io/hashicorp/azurerm",
+			"type":          "azurerm_resource_group",
+		},
+		{
+			"address": "azurerm_subnet.internal",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"address_prefixes": [
+						"10.0.2.0/24",
+					],
+					"delegation": [],
+					"enforce_private_link_endpoint_network_policies": false,
+					"enforce_private_link_service_network_policies":  false,
+					"name":                        "internal",
+					"resource_group_name":         "initoc-rg",
+					"service_endpoint_policy_ids": null,
+					"service_endpoints":           null,
+					"timeouts":                    null,
+					"virtual_network_name":        "initoc-network",
+				},
+				"after_sensitive": {
+					"address_prefixes": [
+						false,
+					],
+					"delegation": [],
+				},
+				"after_unknown": {
+					"address_prefix": true,
+					"address_prefixes": [
+						false,
+					],
+					"delegation": [],
+					"id":         true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "internal",
+			"provider_name": "registry.terraform.io/hashicorp/azurerm",
+			"type":          "azurerm_subnet",
+		},
+		{
+			"address": "azurerm_virtual_machine.main",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"additional_capabilities":          [],
+					"boot_diagnostics":                 [],
+					"delete_data_disks_on_termination": true,
+					"delete_os_disk_on_termination":    true,
+					"location":                         "westus2",
+					"name":                             "initoc-vm",
+					"os_profile":                       "REDACTED_SENSITIVE",
+					"os_profile_linux_config": [
+						{
+							"disable_password_authentication": false,
+							"ssh_keys":                        [],
+						},
+					],
+					"os_profile_secrets":        [],
+					"os_profile_windows_config": [],
+					"plan": [],
+					"primary_network_interface_id": null,
+					"proximity_placement_group_id": null,
+					"resource_group_name":          "initoc-rg",
+					"storage_image_reference": [
+						{
+							"id":        "",
+							"offer":     "UbuntuServer",
+							"publisher": "Canonical",
+							"sku":       "16.04-LTS",
+							"version":   "latest",
+						},
+					],
+					"storage_os_disk": [
+						{
+							"caching":                   "ReadWrite",
+							"create_option":             "FromImage",
+							"image_uri":                 null,
+							"managed_disk_type":         "Standard_LRS",
+							"name":                      "myosdisk1",
+							"vhd_uri":                   null,
+							"write_accelerator_enabled": false,
+						},
+					],
+					"tags":     null,
+					"timeouts": null,
+					"vm_size":  "Standard_DS1_v2",
+					"zones":    null,
+				},
+				"after_sensitive": {
+					"additional_capabilities": [],
+					"boot_diagnostics":        [],
+					"identity":                [],
+					"network_interface_ids":   [],
+					"os_profile":              true,
+					"os_profile_linux_config": [
+						{
+							"ssh_keys": [],
+						},
+					],
+					"os_profile_secrets":        [],
+					"os_profile_windows_config": [],
+					"plan":              [],
+					"storage_data_disk": [],
+					"storage_image_reference": [
+						{},
+					],
+					"storage_os_disk": [
+						{},
+					],
+				},
+				"after_unknown": {
+					"additional_capabilities": [],
+					"availability_set_id":     true,
+					"boot_diagnostics":        [],
+					"id":                      true,
+					"identity":                true,
+					"license_type":            true,
+					"network_interface_ids":   true,
+					"os_profile": [
+						{
+							"custom_data": true,
+						},
+					],
+					"os_profile_linux_config": [
+						{
+							"ssh_keys": [],
+						},
+					],
+					"os_profile_secrets":        [],
+					"os_profile_windows_config": [],
+					"plan":              [],
+					"storage_data_disk": true,
+					"storage_image_reference": [
+						{},
+					],
+					"storage_os_disk": [
+						{
+							"disk_size_gb":    true,
+							"managed_disk_id": true,
+							"os_type":         true,
+						},
+					],
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "main",
+			"provider_name": "registry.terraform.io/hashicorp/azurerm",
+			"type":          "azurerm_virtual_machine",
+		},
+		{
+			"address": "azurerm_virtual_network.main",
+			"change": {
+				"actions": [
+					"create",
+				],
+				"after": {
+					"address_space": [
+						"10.0.0.0/16",
+					],
+					"bgp_community":         null,
+					"ddos_protection_plan":  [],
+					"location":              "westus2",
+					"name":                  "initoc-network",
+					"resource_group_name":   "initoc-rg",
+					"tags":                  null,
+					"timeouts":              null,
+					"vm_protection_enabled": false,
+				},
+				"after_sensitive": {
+					"address_space": [
+						false,
+					],
+					"ddos_protection_plan": [],
+					"dns_servers":          [],
+					"subnet":               [],
+				},
+				"after_unknown": {
+					"address_space": [
+						false,
+					],
+					"ddos_protection_plan": [],
+					"dns_servers":          true,
+					"guid":                 true,
+					"id":                   true,
+					"subnet":               true,
+				},
+				"before":           null,
+				"before_sensitive": false,
+			},
+			"mode":          "managed",
+			"name":          "main",
+			"provider_name": "registry.terraform.io/hashicorp/azurerm",
+			"type":          "azurerm_virtual_network",
+		},
+	],
+	"terraform_version": "1.0.9",
+	"variables": {
+		"prefix": {
+			"value": "initoc",
+		},
+	},
+}

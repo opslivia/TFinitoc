@@ -1,0 +1,713 @@
+import "strings"
+import "types"
+
+_modules = {
+	"root": {
+		"data": {},
+		"path": [],
+		"resources": {
+			"azurerm_network_interface": {
+				"main": {
+					0: {
+						"applied": {
+							"enable_accelerated_networking": false,
+							"enable_ip_forwarding":          false,
+							"ip_configuration": [
+								{
+									"name": "testconfiguration1",
+									"private_ip_address_allocation": "dynamic",
+									"private_ip_address_version":    "IPv4",
+									"public_ip_address_id":          null,
+								},
+							],
+							"location":            "westus2",
+							"name":                "initoc-nic",
+							"resource_group_name": "initoc-rg",
+							"tags":                null,
+							"timeouts":            null,
+						},
+						"destroy": false,
+						"diff": {
+							"applied_dns_servers.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"dns_servers.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"enable_accelerated_networking": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"enable_ip_forwarding": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"internal_dns_name_label": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"internal_domain_name_suffix": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ip_configuration.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"ip_configuration.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ip_configuration.0.name": {
+								"computed": false,
+								"new":      "testconfiguration1",
+								"old":      "",
+							},
+							"ip_configuration.0.primary": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ip_configuration.0.private_ip_address": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"ip_configuration.0.private_ip_address_allocation": {
+								"computed": false,
+								"new":      "dynamic",
+								"old":      "",
+							},
+							"ip_configuration.0.private_ip_address_version": {
+								"computed": false,
+								"new":      "IPv4",
+								"old":      "",
+							},
+							"ip_configuration.0.public_ip_address_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ip_configuration.0.subnet_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"location": {
+								"computed": false,
+								"new":      "westus2",
+								"old":      "",
+							},
+							"mac_address": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "initoc-nic",
+								"old":      "",
+							},
+							"private_ip_address": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"private_ip_addresses.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"resource_group_name": {
+								"computed": false,
+								"new":      "initoc-rg",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"virtual_machine_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"azurerm_resource_group": {
+				"main": {
+					0: {
+						"applied": {
+							"location": "westus2",
+							"name":     "initoc-rg",
+							"tags":     null,
+							"timeouts": null,
+						},
+						"destroy": false,
+						"diff": {
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"location": {
+								"computed": false,
+								"new":      "westus2",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "initoc-rg",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"azurerm_subnet": {
+				"internal": {
+					0: {
+						"applied": {
+							"address_prefixes": [
+								"10.0.2.0/24",
+							],
+							"delegation": [],
+							"enforce_private_link_endpoint_network_policies": false,
+							"enforce_private_link_service_network_policies":  false,
+							"name":                        "internal",
+							"resource_group_name":         "initoc-rg",
+							"service_endpoint_policy_ids": null,
+							"service_endpoints":           null,
+							"timeouts":                    null,
+							"virtual_network_name":        "initoc-network",
+						},
+						"destroy": false,
+						"diff": {
+							"address_prefix": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"address_prefixes.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"address_prefixes.0": {
+								"computed": false,
+								"new":      "10.0.2.0/24",
+								"old":      "",
+							},
+							"delegation.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"enforce_private_link_endpoint_network_policies": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"enforce_private_link_service_network_policies": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "internal",
+								"old":      "",
+							},
+							"resource_group_name": {
+								"computed": false,
+								"new":      "initoc-rg",
+								"old":      "",
+							},
+							"service_endpoint_policy_ids": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"service_endpoints": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"virtual_network_name": {
+								"computed": false,
+								"new":      "initoc-network",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"azurerm_virtual_machine": {
+				"main": {
+					0: {
+						"applied": {
+							"additional_capabilities":          [],
+							"boot_diagnostics":                 [],
+							"delete_data_disks_on_termination": true,
+							"delete_os_disk_on_termination":    true,
+							"location":                         "westus2",
+							"name":                             "initoc-vm",
+							"os_profile":                       "REDACTED_SENSITIVE",
+							"os_profile_linux_config": [
+								{
+									"disable_password_authentication": false,
+									"ssh_keys":                        [],
+								},
+							],
+							"os_profile_secrets":        [],
+							"os_profile_windows_config": [],
+							"plan": [],
+							"primary_network_interface_id": null,
+							"proximity_placement_group_id": null,
+							"resource_group_name":          "initoc-rg",
+							"storage_image_reference": [
+								{
+									"id":        "",
+									"offer":     "UbuntuServer",
+									"publisher": "Canonical",
+									"sku":       "16.04-LTS",
+									"version":   "latest",
+								},
+							],
+							"storage_os_disk": [
+								{
+									"caching":                   "ReadWrite",
+									"create_option":             "FromImage",
+									"image_uri":                 null,
+									"managed_disk_type":         "Standard_LRS",
+									"name":                      "myosdisk1",
+									"vhd_uri":                   null,
+									"write_accelerator_enabled": false,
+								},
+							],
+							"tags":     null,
+							"timeouts": null,
+							"vm_size":  "Standard_DS1_v2",
+							"zones":    null,
+						},
+						"destroy": false,
+						"diff": {
+							"additional_capabilities.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"availability_set_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"boot_diagnostics.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"delete_data_disks_on_termination": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"delete_os_disk_on_termination": {
+								"computed": false,
+								"new":      "true",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"identity.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"license_type": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"location": {
+								"computed": false,
+								"new":      "westus2",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "initoc-vm",
+								"old":      "",
+							},
+							"network_interface_ids.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"os_profile": {
+								"computed": false,
+								"new":      "REDACTED_SENSITIVE",
+								"old":      "",
+							},
+							"os_profile.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"os_profile.0.custom_data": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"os_profile_linux_config.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"os_profile_linux_config.0.%": {
+								"computed": false,
+								"new":      "2",
+								"old":      "",
+							},
+							"os_profile_linux_config.0.disable_password_authentication": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"os_profile_linux_config.0.ssh_keys.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"os_profile_secrets.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"os_profile_windows_config.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"plan.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"primary_network_interface_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"proximity_placement_group_id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"resource_group_name": {
+								"computed": false,
+								"new":      "initoc-rg",
+								"old":      "",
+							},
+							"storage_data_disk.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"storage_image_reference.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"storage_image_reference.0.%": {
+								"computed": false,
+								"new":      "5",
+								"old":      "",
+							},
+							"storage_image_reference.0.id": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"storage_image_reference.0.offer": {
+								"computed": false,
+								"new":      "UbuntuServer",
+								"old":      "",
+							},
+							"storage_image_reference.0.publisher": {
+								"computed": false,
+								"new":      "Canonical",
+								"old":      "",
+							},
+							"storage_image_reference.0.sku": {
+								"computed": false,
+								"new":      "16.04-LTS",
+								"old":      "",
+							},
+							"storage_image_reference.0.version": {
+								"computed": false,
+								"new":      "latest",
+								"old":      "",
+							},
+							"storage_os_disk.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"storage_os_disk.0.%": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"storage_os_disk.0.caching": {
+								"computed": false,
+								"new":      "ReadWrite",
+								"old":      "",
+							},
+							"storage_os_disk.0.create_option": {
+								"computed": false,
+								"new":      "FromImage",
+								"old":      "",
+							},
+							"storage_os_disk.0.disk_size_gb": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"storage_os_disk.0.image_uri": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"storage_os_disk.0.managed_disk_id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"storage_os_disk.0.managed_disk_type": {
+								"computed": false,
+								"new":      "Standard_LRS",
+								"old":      "",
+							},
+							"storage_os_disk.0.name": {
+								"computed": false,
+								"new":      "myosdisk1",
+								"old":      "",
+							},
+							"storage_os_disk.0.os_type": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"storage_os_disk.0.vhd_uri": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"storage_os_disk.0.write_accelerator_enabled": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vm_size": {
+								"computed": false,
+								"new":      "Standard_DS1_v2",
+								"old":      "",
+							},
+							"zones": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+			"azurerm_virtual_network": {
+				"main": {
+					0: {
+						"applied": {
+							"address_space": [
+								"10.0.0.0/16",
+							],
+							"bgp_community":         null,
+							"ddos_protection_plan":  [],
+							"location":              "westus2",
+							"name":                  "initoc-network",
+							"resource_group_name":   "initoc-rg",
+							"tags":                  null,
+							"timeouts":              null,
+							"vm_protection_enabled": false,
+						},
+						"destroy": false,
+						"diff": {
+							"address_space.#": {
+								"computed": false,
+								"new":      "1",
+								"old":      "",
+							},
+							"address_space.0": {
+								"computed": false,
+								"new":      "10.0.0.0/16",
+								"old":      "",
+							},
+							"bgp_community": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"ddos_protection_plan.#": {
+								"computed": false,
+								"new":      "0",
+								"old":      "",
+							},
+							"dns_servers.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"guid": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"id": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"location": {
+								"computed": false,
+								"new":      "westus2",
+								"old":      "",
+							},
+							"name": {
+								"computed": false,
+								"new":      "initoc-network",
+								"old":      "",
+							},
+							"resource_group_name": {
+								"computed": false,
+								"new":      "initoc-rg",
+								"old":      "",
+							},
+							"subnet.#": {
+								"computed": true,
+								"new":      "",
+								"old":      "",
+							},
+							"tags": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"timeouts": {
+								"computed": false,
+								"new":      "",
+								"old":      "",
+							},
+							"vm_protection_enabled": {
+								"computed": false,
+								"new":      "false",
+								"old":      "",
+							},
+						},
+						"requires_new": false,
+					},
+				},
+			},
+		},
+	},
+}
+
+module_paths = [
+	[],
+]
+
+terraform_version = "1.0.9"
+
+variables = {
+	"prefix": "initoc",
+}
+
+module = func(path) {
+	if types.type_of(path) is not "list" {
+		error("expected list, got", types.type_of(path))
+	}
+
+	if length(path) < 1 {
+		return _modules.root
+	}
+
+	addr = []
+	for path as p {
+		append(addr, "module")
+		append(addr, p)
+	}
+
+	return _modules[strings.join(addr, ".")]
+}
+
+data = _modules.root.data
+path = _modules.root.path
+resources = _modules.root.resources
