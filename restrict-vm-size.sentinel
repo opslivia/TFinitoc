@@ -2,7 +2,7 @@
 
 # Import tfplan-functions.sentinel
 # with alias "plan"
-import "tfplan-functions" as plan
+import tfplan-functions.sentinel as plan
 
 # Allowed Azure VM Sizes
 # Include "null" to allow missing or computed values
